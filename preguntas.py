@@ -1,5 +1,5 @@
 """
-Laboratorio - Manipulación de Datos usando Pandas
+'Laboratorio - Manipulación de Datos usando Pandas
 -----------------------------------------------------------------------------------------
 
 Este archivo contiene las preguntas que se van a realizar en el laboratorio.
@@ -51,7 +51,6 @@ def pregunta_03():
     D     6
     E    14
     Name: _c1, dtype: int64
-
     """
     tbl0.set_index('_c1')
     num_letters=tbl0['_c1'].value_counts().sort_index()
@@ -185,7 +184,16 @@ def pregunta_10():
     2   C                    0:5:6:7:9
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
+
+    
+
     """
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
+
+
+
     tbl0=tbl0.sort_values('_c2')
     tbl0['_c2']=tbl0['_c2'].astype('str')
     group=tbl0[['_c1','_c2']].groupby('_c1', as_index=False).agg({'_c2':':'.join})
@@ -212,7 +220,10 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
         """
-
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
+    
     tbl1=tbl1.sort_values('_c4')
 
     group=tbl1[['_c0','_c4']].groupby('_c0', as_index=False).agg({'_c4':','.join})
@@ -237,6 +248,10 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+    tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
+
     tbl2=tbl2.sort_values('_c5a')
     tbl2['_c5b']=tbl2['_c5b'].astype('str')
 
@@ -268,4 +283,3 @@ def pregunta_13():
 
 
 
-print(pregunta_10())
