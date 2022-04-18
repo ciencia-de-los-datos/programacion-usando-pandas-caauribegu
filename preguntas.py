@@ -196,7 +196,7 @@ def pregunta_10():
 
     tbl0=tbl0.sort_values('_c2')
     tbl0['_c2']=tbl0['_c2'].astype('str')
-    group=tbl0[['_c1','_c2']].groupby('_c1', as_index=False).agg({'_c2':':'.join})
+    group=tbl0[['_c1','_c2']].groupby('_c1', as_index=True).agg({'_c2':':'.join})
     # group.rename(columns={'_c1':'_c0'}, inplace = True)
     # group.rename(columns = {'_c2':'_c1'}, inplace = True)
 
