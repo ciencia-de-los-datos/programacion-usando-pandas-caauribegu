@@ -265,3 +265,7 @@ def pregunta_13():
     group= final.groupby('_c1')['_c5b'].sum()
 
     return group
+
+
+
+print(pregunta_10())
