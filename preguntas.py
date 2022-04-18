@@ -283,3 +283,4 @@ def pregunta_13():
 
 
 
+print(pregunta_10())
